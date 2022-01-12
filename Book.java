@@ -1,93 +1,85 @@
 public class Book
   
 {
-  //Fields
-  private String title;       //t
-  private String author;      //a
-  private int year;           //y
-  private int numPages;       //n
-  private boolean hardCover;  //c
+  //Fields/instance data
+  private String title;
+  private String author;
+  private int year;
+  private int numPages;
+  private boolean hardCover;
   
   //Constructor
-  public Book(String t, String a, int y, int n, boolean c)
+  public Book(String t, String a, int y, int n, boolean h)
   {
-    title = t;
-    author = a;
-    year = y;
-    numPages = n;
-    hardCover = c;
+    setTitle(t);
+    setAuthor(a);
+    setYear(y);
+    setNumPages(n);
+    setHardCover(h);
   }
-
-
-
-
-  public String getTitel()
+  //overloading the constructor
+  public Book()
+  {
+    this("none","unknown",1900,1,false);
+  }
+  //accessor methods
+  public String getTitle()
   {
     return title;
   }
-
   public String getAuthor()
   {
     return author;
   }
-
   public int getYear()
   {
     return year;
   }
-  
   public int getNumPages()
   {
     return numPages;
   }
-
   public boolean getHardCover()
   {
     return hardCover;
   }
-
-
-
-//mutator
-public void setTitle(string t)
-{
-  title = t;
-}
-
-public void setAuthor(string a)
-{
-  author = a;
-}
-
-public void setNumPages(int n)
-{
-  numPages = n;
-}
-
-public void setYear(int y)
-{
-  year = y;
-}
-
-public void setHardCover(boolean c)
-{
-  hardcover = c;
-}
-
-  public String toString()    //returning string as seen here so you need to have a return stement.
+  //Mutator methods
+  public void setTitle(String k)
   {
-    String str = "";
-    str = "Title: " + title + "\nAuthor: "+author+"\nYear published: " +year+"\nNumper of pages: "+numPages+"\nHard-cover: "+hardCover;
-    
-    return str;
+    title=k;
   }
-
+  public void setAuthor(String f)
+  {
+    author=f;
+  }
+  public void setYear(int y)
+  {
+    year=y;
+  }
+  public void setNumPages(int s)
+  {
+    numPages=s;
+  }
+  public void setHardCover(boolean o)
+  {
+    hardCover=o;
+  }
+ 
+  //Other methods
   public boolean equals(Book b)
   {
-    if (this.getTitle().equals(b.getTitle()))
-    {
-      return true;
-    }
+    if(this.getTitle().equals(b.getTitle()))
+    return true;
+    else
+    return false;
   }
+  //What prints for our object
+  public String toString()
+    {
+    String str="";
+    str="title: "+title +" \nauthor: "+author +"\nyear: "+ year;
+    str+= "\nnumPages: "+numPages + " \nhardCover: "+hardCover;
+    return str;
+    }
   
 }
